@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.thymeleaf.org ">
+<head>
+    <meta charset="UTF-8">
+    <title>Log in</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link th:href="@{/static/css/login.css}" type="text/css" rel="stylesheet"/>
+    <link th:href="@{/static/css/reset.css}" type="text/css" rel="stylesheet"/>
+    <link rel="shortcut icon" type="image/x-icon" href="../static/favicon.ico"/>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="loginPage container h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+        <section class="loginLabel">
+            <div class="text-center mb-5">
+                <!--                <img class="img-fluid" alt="company logo" th:src="@{/static/images/loginPage/logo.png}"/>-->
+                <div class="title">Log in and create yourself a subscription</div>
+            </div>
+            <div>
+                <form method="POST">
+                    <div th:if="${param.error}">
+                        <div class="alert alert-danger">
+                            Invalid username / password or the account has not been activated yet
+                        </div>
+                    </div>
+                    <div class="row m-0 mb-3">
+                        <div class="col-12 loginInput mb-3">
+                            <div class="text">Login</div>
+                            <input type="text" id="email" name="email">
+                        </div>
+                        <div class="col-12 passwordInput">
+                            <div class="text">Hasło</div>
+                            <input type="password" id="password" name="password">
+                        </div>
+                    </div>
+                    <div class="text-center mt-5 mb-5">
+                        <button id="submit" class="btn submitButton" type="submit">Zaloguj się</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+</div>
+</body>
+</html>
+
+<!--<script>-->
+<!--    let stopEvent = true;-->
+<!--    document.getElementById("submit").addEventListener("click", function(e) {-->
+<!--        if (stopEvent) {-->
+<!--            e.preventDefault();-->
+<!--            let url = "/api/userId/?email=" + document.getElementById("email").value;-->
+<!--            $.ajax({-->
+<!--                method: "GET",-->
+<!--                url: url,-->
+<!--            })-->
+<!--                .done(function(response) {-->
+<!--                    localStorage.removeItem("userId");-->
+<!--                    localStorage.setItem("userId", response.userId);-->
+<!--                    stopEvent = false;-->
+<!--                    document.getElementById("submit").click();-->
+
+<!--                })-->
+<!--        }-->
+<!--    })-->
+<!--</script>-->

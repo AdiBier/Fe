@@ -1,0 +1,79 @@
+html, body {
+    height: 100%;
+}
+body {
+    background-image: url("../images/loginPage/loginbg.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+input {
+    border:none;
+    background-image:none;
+    background-color:transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border-bottom: 1px solid darkgrey;
+}
+
+.text {
+    font: 15px/25px Source Sans Pro;
+    letter-spacing: 0;
+    color: #43425D;
+    opacity: 1;
+}
+
+.loginLabel {
+    max-width: 540px;
+    background: #FFFFFF 0 0 no-repeat padding-box;
+    box-shadow: 0 20px 20px #7682B72E;
+    opacity: 1;
+    padding: 40px;
+}
+
+.loginLabel .title {
+    text-align: center;
+    font: 18px/25px Source Sans Pro;
+    letter-spacing: 0;
+    color: #4D4F5C;
+    opacity: 0.5;
+}
+
+.loginInput input {
+    width: 100%;
+    font: 18px/25px Source Sans Pro;
+}
+
+.passwordInput input {
+    width: 100%;
+    font: 18px/25px Source Sans Pro;
+}
+
+.remember input {
+    margin-right: 10px;
+    transform: scale(1.3);
+}
+
+.forgotPassword:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.submitButton {
+    color: white;
+    font-size: 18px;
+    max-width: 400px;
+    width: 100%;
+    height: 50px;
+    background: #286758;
+    border: 1px solid #43425D;
+    border-radius: 4px;
+}
+
+.submitButton:hover {
+    background: #119558;
+    opacity: 0.99;
+}
