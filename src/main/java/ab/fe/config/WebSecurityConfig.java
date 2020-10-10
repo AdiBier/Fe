@@ -13,7 +13,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
   @Bean
   public BCryptPasswordEncoder passwordEncoder() {
-    return new BCryptPasswordEncoder();
+    return new BCryptPasswordEncoder(16);
   }
 
   @Override
@@ -26,18 +26,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             "/static/css/**",
             "/static/favicon.ico",
             "/**/*.css",
-            "/users/**",
-            "/api/userId/**")
+            "/customers/**",
+            "/api/customers/**")
         .permitAll()
         .antMatchers(
-            "/chat",
             "/home",
             "/",
-            "/flowerbed-status",
             "/api/users/**",
-            "/api/events/**",
             "/api/admin/**")
-        .access("hasRole('ROLE_BASIC') or hasRole('ROLE_ADMIN')")
+        .access("hasRole('ROLE_CUSTOMER') or hasRole('ROLE_ADMIN')")
         .anyRequest()
         .authenticated()
         .and()
