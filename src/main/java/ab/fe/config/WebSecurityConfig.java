@@ -26,8 +26,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             "/static/css/**",
             "/static/favicon.ico",
             "/**/*.css",
-            "/customers/**",
-            "/api/customers/**")
+            "/api/customer/**")
         .permitAll()
         .antMatchers(
             "/home",

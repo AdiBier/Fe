@@ -17,10 +17,8 @@ public class MvcConfig implements WebMvcConfigurer {
 
   @Override
   public void addResourceHandlers(ResourceHandlerRegistry registry) {
-
     if (!registry.hasMappingForPattern("/static/**")) {
       registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
-      registry.addResourceHandler("/images/**").addResourceLocations("classpath:/static/");
     }
   }
 }

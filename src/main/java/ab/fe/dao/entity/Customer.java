@@ -3,6 +3,7 @@ package ab.fe.dao.entity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
 
@@ -10,6 +11,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 @NoArgsConstructor
+@SuperBuilder
 @Table(name = "Customer", uniqueConstraints = @UniqueConstraint(columnNames = {"Email"}))
 public class Customer {
 
@@ -29,11 +31,4 @@ public class Customer {
 
   @Column(name = "Role", nullable = false)
   private String role;
-
-  public Customer(String name, String email, String password, String role) {
-    this.name = name;
-    this.email = email;
-    this.password = password;
-    this.role = role;
-  }
 }

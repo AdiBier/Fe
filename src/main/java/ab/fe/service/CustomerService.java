@@ -12,9 +12,13 @@ public interface CustomerService extends UserDetailsService {
 
   Optional<Customer> findCustomerByEmail(String email);
 
-  List<Customer> findAllCustomerList();
+  List<Customer> findAllUser();
 
   Customer registerCustomer(Customer customer);
 
   boolean checkEmail(String email);
+
+  void save(Customer customer);
+
+  Customer findByLogin(String login);
 }
